@@ -1,30 +1,28 @@
 package frogger;
-
-
 import javax.swing.*;
-import java.awt.*;
+import java.awt.event.*;
 
-public class backup extends JFrame
+public class Frogger extends JFrame
 {
     private JButton startButton;
-	private JButton backButton;
+    private JButton backButton;
     //private ArrayList<JButton> cars;
     //private ImageIcon board = new ImageIcon("images/classroom_defense1.png");
     //private ImageIcon frogIcon = new ImageIcon("images/cartoon-soldier-010.jpg");
     
-	private ActionListener startListener;
-	private ActionListener backListener;
-	
-	private JPanel homePanel;
-	private JPanel gamePanel;
-	
-	private JFrame cdf = this;
+    private ActionListener startListener;
+    private ActionListener backListener;
+    
+    private JPanel homePanel;
+    private JPanel gamePanel;
+    
+    private JFrame ff = this;
 
-    public backup()
+    public Frogger()
     {
         createComponents();
         createPanels();
-        this.setSize(235, 505);
+        this.setSize(200, 150);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
@@ -47,14 +45,13 @@ public class backup extends JFrame
                 Object obj = e.getSource();                
                 if (action.equals("start"))
                 {
-                    startGame();
+                    backup.startGame();
                 }
                 if (action.equals("back"))
                 {
-                    gameScreenPanel.setVisible(false);
-                    gameOptionsPanel.setVisible(false);
+                    gamePanel.setVisible(false);
                     homePanel.setVisible(true);
-                    cdf.setSize(235, 505);
+                    ff.setSize(200, 150);
                 } 
             }
         }        
@@ -72,30 +69,30 @@ public class backup extends JFrame
         homePanel=new JPanel();
         homePanel.setLayout(null);
         homePanel.add(startButton);        
-        startButton.setBounds(130, 10, 80, 25);        
+        startButton.setBounds(50, 40, 80, 25);        
         
-        gameScreenPanel=new JPanel();
-        gameScreenPanel.setLayout(null);
-        gameScreenPanel.setVisible(false);
-        gameScreenPanel.setBounds(0, 0, 750, 750);
-		gameScreenPanel.add(backButton);
-		backButton.setBounds(0,0,50,25)
+        gamePanel=new JPanel();
+        gamePanel.setLayout(null);
+        gamePanel.setVisible(false);
+        gamePanel.setBounds(0, 0, 500, 500);
+	gamePanel.add(backButton);
+	backButton.setBounds(0,0,75,25);
         
-        this.add(gameScreenPanel);
+        this.add(gamePanel);
         this.add(homePanel);
     }
     public void startGame()
     {
         homePanel.setVisible(false);
-        gameScreenPanel.setVisible(true);
-        cdf.setSize(960, 790);
-        cdf.setTitle("Frogger");
-        gameScreenPanel.add(gameBoard);
-        gameBoard.setBounds(0,0,750,750);
+        gamePanel.setVisible(true);
+        ff.setSize(510, 510);
+        ff.setTitle("Frogger");
+        //gamePanel.add(gameBoard);
+        //gameBoard.setBounds(0,0,750,750);
     }
     public static void main(String[] args)
     {
         @SuppressWarnings("unused")
-        JFrame testFrame = new FroggerFrame();
+        JFrame f = new Frogger();
     }
 }
