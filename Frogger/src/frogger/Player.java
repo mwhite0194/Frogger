@@ -1,5 +1,5 @@
 
-package froggerprot;
+package frogger;
 
 import java.awt.event.KeyEvent;
 
