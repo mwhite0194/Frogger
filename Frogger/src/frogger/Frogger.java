@@ -2,13 +2,10 @@ package frogger;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class Frogger extends JFrame
+public class Frogger extends JFrame 
 {
     private JButton startButton;
     private JButton backButton;
-    //private ArrayList<JButton> cars;
-    //private ImageIcon board = new ImageIcon("images/classroom_defense1.png");
-    //private ImageIcon frogIcon = new ImageIcon("images/cartoon-soldier-010.jpg");
     
     private ActionListener startListener;
     private ActionListener backListener;
@@ -87,8 +84,6 @@ public class Frogger extends JFrame
         gamePanel.setVisible(true);
         ff.setSize(510, 510);
         ff.setTitle("Frogger");
-        //gamePanel.add(gameBoard);
-        //gameBoard.setBounds(0,0,750,750);
     }
     public static void main(String[] args)
     {
